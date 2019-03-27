@@ -1,6 +1,3 @@
-package datastructure;
-
-
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -139,7 +136,7 @@ public class TwoThreeTree<K extends Comparable<K>> {
         void insert2Node(Node toInsert) {
             K key = toInsert.lkey;
             int cmp = key.compareTo(lkey);
-            if (cmp < 0) { // case 2.1 2-node leftmost
+            if (cmp < 0) { // case 2.1: 2-node leftmost
                 rkey = lkey;
                 lkey = key;
                 right = middle;
@@ -151,7 +148,7 @@ public class TwoThreeTree<K extends Comparable<K>> {
                 if (null != left) {
                     left.parent = this;
                 }
-            } else { //       case 2.2 2-node rightmost
+            } else { //       case 2.2: 2-node rightmost
                 rkey = key;
                 right = toInsert.middle;
                 if (null != right) {
